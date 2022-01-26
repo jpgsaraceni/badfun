@@ -6,7 +6,7 @@ export default (repository) => {
         // inject repository implementation in usecase
         const deleteCommand = DeleteEntry(repository);
         
-        const {id} = req.body;
+        const {id} = req.params;
 
         deleteCommand.Execute(id)
             .then(result => {

@@ -5,8 +5,12 @@ export default (repository) => {
 
         // inject repository implementation in usecase
         const updateCommand = Update(repository);
+
+        const {name, email} = req.body;
+        const {id} = req.params;
         
-        updateCommand.Execute()
+
+        updateCommand.Execute(id, name, email)
             .then(result => {
                 res.json(result)
             }).catch(err => {
