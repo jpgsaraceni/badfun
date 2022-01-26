@@ -1,7 +1,7 @@
-const Create = import("./clients/Create")
-const DeleteEntry = import("./clients/DeleteEntry")
-const Fetch = import("./clients/Fetch")
-const Update = import("./clients/Update")
+import Create from "./clients/Create"
+import DeleteEntry from "./clients/DeleteEntry"
+import Fetch from "./clients/Fetch"
+import Update from "./clients/Update"
 
 export default () => {
     const create = Create

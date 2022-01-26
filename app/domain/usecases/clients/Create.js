@@ -1,4 +1,4 @@
-const Client = import("../../entities/Client")
+import Client from "../../entities/Client"
 
 // ClientRepository is an abstraction of the concrete implementation of
 // the database, which avoids creating a dependency in the usecase, therefore
