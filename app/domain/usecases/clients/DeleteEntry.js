@@ -1,10 +1,10 @@
 export default (ClientRepository) => {
     
-    async function deleteEntry(id) {
+    async function Execute(id) {
 
         // delete client from database
         ClientRepository.deleteEntry(id)
     }
 
-    return deleteEntry
+    return Execute
 }

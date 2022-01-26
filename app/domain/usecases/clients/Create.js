@@ -5,7 +5,7 @@ const Client = import("../../entities/Client")
 // respecting the Clean Arch inwards dependencies rule.
 export default (ClientRepository) => {
     
-    async function create(name, email) {
+    async function Execute(name, email) {
         if (!name || !email) {
             throw new Error('validation failed');
         }
@@ -17,5 +17,5 @@ export default (ClientRepository) => {
         newClient = ClientRepository.create(newClient)
     }
 
-    return create
+    return Execute
 }

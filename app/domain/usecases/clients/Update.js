@@ -1,6 +1,6 @@
 export default (ClientRepository) => {
     
-    async function update(id, name, email) {
+    async function Execute(id, name, email) {
         if (!name || !email) {
             throw new Error('validation failed');
         }
@@ -9,5 +9,5 @@ export default (ClientRepository) => {
         ClientRepository.create(id, name, email)
     }
 
-    return update
+    return Execute
 }

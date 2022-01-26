@@ -1,10 +1,10 @@
 export default (ClientRepository) => {
     
-    async function fetch() {
+    async function Execute() {
 
         // fetch clients from database
         return ClientRepository.fetch()
     }
 
-    return fetch
+    return Execute
 }
