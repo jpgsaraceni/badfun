@@ -1,4 +1,4 @@
-const Create = import("../../../../domain/usecases/Create")
+const Create = import("../../../../domain/usecases/clients/Create")
 
 export default (repository) => {
     const create = (req, res, next) => {

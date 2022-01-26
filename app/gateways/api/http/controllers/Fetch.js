@@ -1,4 +1,4 @@
-const Fetch = import("../../../../domain/usecases/Fetch")
+const Fetch = import("../../../../domain/usecases/clients/Fetch")
 
 export default (repository) => {
     const fetch = (req, res, next) => {

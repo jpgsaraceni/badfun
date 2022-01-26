@@ -1,4 +1,4 @@
-const DeleteEntry = import("../../../../domain/usecases/DeleteEntry")
+const DeleteEntry = import("../../../../domain/usecases/clients/DeleteEntry")
 
 export default (repository) => {
     const deleteEntry = (req, res, next) => {

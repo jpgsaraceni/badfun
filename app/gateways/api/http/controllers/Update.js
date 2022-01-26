@@ -1,4 +1,4 @@
-const Update = import("../../../../domain/usecases/Update")
+const Update = import("../../../../domain/usecases/clients/Update")
 
 export default (repository) => {
     const update = (req, res, next) => {
