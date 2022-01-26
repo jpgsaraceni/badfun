@@ -17,7 +17,7 @@ export default class ClientRepository {
         return Promise.reject(new Error('not implemented'));
     }
 
-    delete(clientInstance) {
+    deleteEntry(clientInstance) {
         return Promise.reject(new Error('not implemented'));
     }
 }
