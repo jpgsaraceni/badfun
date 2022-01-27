@@ -1,10 +1,6 @@
 export default (ClientRepository) => {
-    
-    async function Execute() {
-
+    return async function Execute() {
         // fetch clients from database
-        return ClientRepository.fetch()
+        return await ClientRepository.Fetch()
     }
-
-    return Execute
 }
