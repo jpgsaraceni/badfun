@@ -20,7 +20,7 @@ I haven't set up a .env because I *intend* to conteinerize this application (and
 1. Clone this repo and enter it
 
 ```shell
-git clone && cd mongoose-crud
+git clone https://github.com/jpgsaraceni/mongoose-crud.git && cd mongoose-crud
 ```
 
 2. Install dependencies
