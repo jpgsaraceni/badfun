@@ -16,7 +16,7 @@ Simple CRUD API to register, fetch, update and delete clients from a MongoDB dat
 git clone https://github.com/jpgsaraceni/mongoose-crud.git && cd mongoose-crud && make start
 ```
 
-To stop the app, run `make start`
+To stop the app, run `make stop`
 
 ### Run without docker-compose
 
