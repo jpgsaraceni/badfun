@@ -1,9 +1,9 @@
-import "dotenv/config"
+import Env from "./config/Env.js"
 import express from "express"
 
 import Router from "./gateways/api/http/Router.js"
-import Repository from "./gateways/db/mongo/clients/Repository.js"
-import Connect from "./gateways/db/mongo/Connect.js"
+import Repository from "./gateways/db/mongo/ClientRepository.js"
+import Connect from "./config/Connect.js"
 
 const app = express()
 
@@ -15,6 +15,4 @@ Connect()
     .then(() => console.log("connected to mongodb"))
     .catch(() => console.log("connection to mongodb failed"))
 
-const port = process.env.SERVER_PORT
-
-app.listen(port, () => console.log(`listening on port ${port}`))
+app.listen(Env.serverPort, () => console.log(`listening on port ${Env.serverPort}`))
