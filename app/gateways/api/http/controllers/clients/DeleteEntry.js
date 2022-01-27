@@ -1,20 +1,24 @@
 import DeleteEntry from "../../../../../domain/usecases/clients/DeleteEntry.js"
 
-// TODO:
-
 export default (repository) => {
-    const deleteEntry = (req, res, next) => {
+    const deleteEntry = (req, res) => {
 
         // inject repository implementation in usecase
-        const deleteCommand = DeleteEntry(repository);
+        const deleteUseCase = DeleteEntry(repository);
         
         const {id} = req.params;
 
-        deleteCommand.Execute(id)
-            .then(result => {
-                res.json(result)
-            }).catch(err => {
-                next(err)
+        if (!id) {
+            res.sendStatus(400)
+            return
+        }
+
+        deleteUseCase(id)
+            .then(() => {
+                res.sendStatus(200)
+            }).catch((err) => {
+                console.log(err)
+                res.sendStatus(500) // TODO: id not found
             })
     }
 
