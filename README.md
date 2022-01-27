@@ -4,13 +4,12 @@ Simple CRUD API to register, fetch, update and delete clients from a MongoDB dat
 
 ## TODO
 
-* Create Postman collection;
 * Enforce contracts for repository and usecase;
 * Unit and integration tests;
 
 ## Run the app
 
-1. Clone this repo, enter the local dierectory, and start the app (you will need docker-compose installed):
+1. Clone this repo, enter the local dierectory, and start the app (you will need [docker-compose](https://docs.docker.com/compose/install/) installed):
 
 ```shell
 git clone https://github.com/jpgsaraceni/mongoose-crud.git && cd mongoose-crud && make start
@@ -52,7 +51,9 @@ or with live reload (nodemon):
 npm run dev
 ```
 
-Now you can test the routes on Postman, ThunderClient or whichever API testing service you prefer.
+## Testing HTTP Routes
+
+You can use [REST Client](https://github.com/Huachao/vscode-restclient) extension on VSCode to test the HTTP server routes. On the file `crud.http`, in the root of this project, the routes have already been written. Just click on the `Send Request` button the extension shows on your editor. Or use whichever HTTP request service you prefer, like curl or ThunderClient.
 
 ## Routes
 

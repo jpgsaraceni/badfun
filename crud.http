@@ -1,0 +1,25 @@
+### Create client
+POST http://localhost:3000 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sample",
+    "email": "sample@email.com"
+}
+
+### Fetch clients
+GET http://localhost:3000 HTTP/1.1
+
+### Update client (update path param to valid id
+### after creating a new or fetching existent clients)
+PUT http://localhost:3000/61f31592500847082b212417 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "updated",
+    "email": "updated@email.com"
+}
+
+### Delete client (update path param to valid id
+### after creating a new or fetching existent clients)
+DELETE http://localhost:3000/61f31589500847082b212414 HTTP/1.1
