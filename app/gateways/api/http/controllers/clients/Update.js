@@ -8,7 +8,11 @@ export default (repository) => {
 
         const {name, email} = req.body;
         const {id} = req.params;
-        
+
+        if (!name || !email || !id) {
+            res.sendStatus(400)
+            return
+        }
 
         updateUseCase(id, name, email)
         .then((result) => {
@@ -19,7 +23,7 @@ export default (repository) => {
             }
             }).catch(err => {
                 console.log(err)
-                res.sendStatus(500) // TODO: id not founc
+                res.sendStatus(500) 
             })
     }
 
