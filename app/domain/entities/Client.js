@@ -1,6 +1,6 @@
 export default class Client {
-    constructor(name, email) {
-        this.id = null;
+    constructor(id = null, name, email) {
+        this.id = id;
         this.name = name;
         this.email = email;
     }
