@@ -1,3 +1,4 @@
+import "dotenv/config"
 import express from "express"
 
 import Router from "./gateways/api/http/Router.js"
@@ -14,4 +15,6 @@ Connect()
     .then(() => console.log("connected to mongodb"))
     .catch(() => console.log("connection to mongodb failed"))
 
-app.listen('3000', () => console.log("listening on port 3000"))
+const port = process.env.SERVER_PORT
+
+app.listen(port, () => console.log(`listening on port ${port}`))

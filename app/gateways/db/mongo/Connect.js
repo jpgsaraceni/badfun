@@ -1,3 +1,6 @@
 import mongoose from 'mongoose'
 
-export default () => mongoose.connect('mongodb://localhost:27017/mongoose');
+const db = process.env.DB
+const url = process.env.DB_URL
+
+export default () => mongoose.connect(`mongodb://${url}/${db}`);
