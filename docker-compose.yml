@@ -12,14 +12,14 @@ services:
     environment:
       SERVER_PORT: 3000
       DB: mongoose
-      DB_URL: mongodb:27017
+      DB_URL: mongodb:27018
       depends_on: mongodb
 
   mongodb:
     image: mongo
     ports:
-      - 27017:27017
-    command: mongod --port 27017 --bind_ip_all
+      - 27018:27018
+    command: mongod --port 27018 --bind_ip_all
 
 volumes:
   mongo-data:
