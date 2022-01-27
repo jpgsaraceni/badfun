@@ -14,11 +14,15 @@ export default (repository) => {
         }
 
         deleteUseCase(id)
-            .then(() => {
-                res.sendStatus(200)
+            .then((result) => {
+                if (result == null) {
+                    res.sendStatus(404)
+                } else {
+                    res.sendStatus(200)
+                }
             }).catch((err) => {
                 console.log(err)
-                res.sendStatus(500) // TODO: id not found
+                res.sendStatus(500)
             })
     }
 
