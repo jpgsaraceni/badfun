@@ -1,4 +1,6 @@
-import DeleteEntry from "../../../../../domain/usecases/clients/DeleteEntry"
+import DeleteEntry from "../../../../../domain/usecases/clients/DeleteEntry.js"
+
+// TODO:
 
 export default (repository) => {
     const deleteEntry = (req, res, next) => {

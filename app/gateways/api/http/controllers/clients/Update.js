@@ -1,4 +1,6 @@
-import Update from "../../../../../domain/usecases/clients/Update"
+import Update from "../../../../../domain/usecases/clients/Update.js"
+
+// TODO:
 
 export default (repository) => {
     const update = (req, res, next) => {

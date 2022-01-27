@@ -1,16 +1,16 @@
-import Fetch from "../../../../../domain/usecases/clients/Fetch"
+import Fetch from "../../../../../domain/usecases/clients/Fetch.js"
 
 export default (repository) => {
-    const fetch = (req, res, next) => {
+    const fetch = (req, res) => {
 
         // inject repository implementation in usecase
-        const fetchCommand = Fetch(repository);
+        const fetchUseCase = Fetch(repository);
         
-        fetchCommand.Execute()
+        fetchUseCase(repository)
             .then(result => {
                 res.json(result)
-            }).catch(err => {
-                next(err)
+            }).catch(() => {
+                res.sendStatus(500)
             })
     }
 
