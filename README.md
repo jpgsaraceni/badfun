@@ -10,21 +10,15 @@ Simple CRUD API to register, fetch, update and delete clients from a MongoDB dat
 
 ## Run the app
 
-1. Clone this repo and enter it
+1. Clone this repo, enter the local dierectory, and start the app (you will need docker-compose installed):
 
 ```shell
-git clone https://github.com/jpgsaraceni/mongoose-crud.git && cd mongoose-crud
+git clone https://github.com/jpgsaraceni/mongoose-crud.git && cd mongoose-crud && make start
 ```
 
-2. Build the images and run the app (live reload) and db in the background:
+To stop the app, run `make start`
 
-```shell
-sudo docker-compose up -d
-```
-
-To stop kill the containers run `sudo docker-compose down`
-
-### Run without docker-compose:
+### Run without docker-compose
 
 Before running the app, you will need an instance of MongoDB running locally and to set the following .env variables:
 
