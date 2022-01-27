@@ -5,8 +5,9 @@ import Client from "../../entities/Client.js"
 // respecting the Clean Arch inwards dependencies rule.
 export default (ClientRepository) => {  
     return async function Execute(name, email) {
+
         // create new client instance in memory
-        const newClient = new Client(name, email)
+        const newClient = new Client(null, name, email)
 
         // persist new client to database
         const id = await ClientRepository.Create(newClient)
