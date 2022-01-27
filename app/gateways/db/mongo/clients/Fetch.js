@@ -1,6 +1,14 @@
 import Client from "./Model.js";
 
-export default () => {
+export default async () => {
 
-    return Client.find({})
+    const clientList = await Client.find({})
+    const returnArray = []
+
+    clientList.forEach(element => {
+        const {id, name, email} = element 
+        returnArray.push({id, name, email})
+    });
+   
+    return returnArray
 }
