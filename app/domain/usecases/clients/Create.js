@@ -9,6 +9,7 @@ export default (ClientRepository) => {
         const newClient = new Client(name, email)
 
         // persist new client to database
-        await ClientRepository.Create(newClient)
+        const id = await ClientRepository.Create(newClient)
+        return id
     }
 }

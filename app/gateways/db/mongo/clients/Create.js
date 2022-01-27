@@ -1,10 +1,11 @@
 import Client from "./Model.js";
 
-export default (clientInstance) => {
+export default async (clientInstance) => {
     const newClient = new Client({
         name: clientInstance.name,
         email: clientInstance.email,
     })
 
-    newClient.save() // TODO: return ID
+    const returnObject = await newClient.save()
+    return returnObject.id
 }

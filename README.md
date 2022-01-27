@@ -4,7 +4,6 @@ Simple CRUD API to register, fetch, update and delete clients from a MongoDB dat
 
 ## TODO
 
-* Return id on create client
 * Refactor async functions and handle errors
 * `PUT '/:id'` and `DELETE '/:id'` routes;
 * Create Postman collection;

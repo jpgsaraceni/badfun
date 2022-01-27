@@ -14,8 +14,8 @@ export default (repository) => {
         }
 
         createUseCase(name, email)
-            .then(() => {
-                res.sendStatus(201)
+            .then((id) => {
+                res.status(201).json({id:id})
             }).catch(() => {
                 res.sendStatus(500)
             })
