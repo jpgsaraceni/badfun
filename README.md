@@ -4,8 +4,6 @@ Simple CRUD API to register, fetch, update and delete clients from a MongoDB dat
 
 ## TODO
 
-* Refactor async functions and handle errors
-* `PUT '/:id'` and `DELETE '/:id'` routes;
 * Create Postman collection;
 * Enforce contracts for repository and usecase;
 * Unit and integration tests;
@@ -74,3 +72,20 @@ Add a new client. Expected request payload:
 ```
 
 Responses: 201, 400 or 500.
+
+### PUT `/{id}`
+
+Update an existing client. Expected request payload:
+
+```json
+{
+    "name":<string>,
+    "email":<string>
+}
+```
+
+Responses: 200, 400, 404, 500.
+
+### `DELETE '/{id}'`
+
+Delete an existing client. Responses: 200, 400, 404 or 500.
