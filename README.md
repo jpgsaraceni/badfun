@@ -34,6 +34,12 @@ npm install
 npm start
 ```
 
+or with live reload (nodemon):
+
+```shell
+npm run dev
+```
+
 Now you can test the routes on Postman, ThunderClient or whichever API testing service you prefer.
 
 ## Routes
@@ -47,10 +53,9 @@ Response:
 ```json
 [
     {
-    "_id": <string>,
+    "id": <string>,
     "name": <string>,
     "email": <string>,
-    "__v": <int>
     }
 ]
 ```
