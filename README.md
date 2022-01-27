@@ -7,12 +7,30 @@ Simple CRUD API to register, fetch, update and delete clients from a MongoDB dat
 * Create Postman collection;
 * Enforce contracts for repository and usecase;
 * Unit and integration tests;
-* Containerize (Docker).
 
 ## Run the app
 
-Before running the app, you will need an instance of MongoDB running locally. The app is connecting on port 27017, which is the default MongoDB port.
-I haven't set up a .env because I *intend* to containerize this application (and that will also solve the "you need mongodb running locally" inconvenience).
+1. Clone this repo and enter it
+
+```shell
+git clone https://github.com/jpgsaraceni/mongoose-crud.git && cd mongoose-crud
+```
+
+2. Build the images and run the app:
+
+```shell
+sudo docker-compose up -d
+```
+
+### Run without docker-compose:
+
+Before running the app, you will need an instance of MongoDB running locally and to set the following .env variables:
+
+```env
+DB=<name of your db>
+DB_URL=<default is localhost:27017>
+SERVER_PORT=<the port you want your application to run on>
+```
 
 1. Clone this repo and enter it
 
@@ -73,7 +91,7 @@ Add a new client. Expected request payload:
 
 Responses: 201, 400 or 500.
 
-### PUT `/{id}`
+### `PUT /{id}`
 
 Update an existing client. Expected request payload:
 

@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  app:
+    image: node:16-alpine
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      SERVER_PORT: 3000
+      DB: mongoose
+      DB_URL: mongodb:27017
+      depends_on: mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    command: mongod --port 27017 --bind_ip_all
+
+volumes:
+  mongo-data:
