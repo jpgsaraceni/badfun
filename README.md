@@ -2,11 +2,6 @@
 
 Simple CRUD API to register, fetch, update and delete clients from a MongoDB database. Built with Node.JS, Mongoose and designed following Clean Arch.
 
-## TODO
-
-* Enforce contracts for repository and usecase;
-* Unit and integration tests;
-
 ## Run the app
 
 1. Clone this repo, enter the local dierectory, and start the app (you will need [docker-compose](https://docs.docker.com/compose/install/) installed):
