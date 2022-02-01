@@ -2,14 +2,17 @@ import Env from "./config/Env.js"
 import express from "express"
 
 import Router from "./gateways/api/http/Router.js"
-import Repository from "./gateways/db/mongo/ClientRepository.js"
 import Connect from "./config/Connect.js"
+import ClientRepository from "./gateways/db/mongo/ClientRepository.js"
 
 const app = express()
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-app.use('/', Router(Repository()))
+
+const MongoRepository = new ClientRepository()
+
+app.use('/', Router(MongoRepository))
 
 Connect()
     .then(() => console.log("connected to mongodb"))

@@ -9,7 +9,8 @@ export default (repository) => {
         fetchUseCase(repository)
             .then(result => {
                 res.json(result)
-            }).catch(() => {
+            }).catch((e) => {
+                console.log(e)
                 res.sendStatus(500)
             })
     }

@@ -31,8 +31,9 @@ describe('#controllers.Create.js', function(){
         const testId = new mongoose.Types.ObjectId()
 
         // repositoryStub defines the mocked ropository Create method behavior
-        const repositoryStub = Sinon.stub(ClientRepositoryMock, "Create").returns(testId.toString())
-        const create = Create(ClientRepositoryMock)
+        const clientRepositoryMock = new ClientRepositoryMock
+        const repositoryStub = Sinon.stub(clientRepositoryMock, "Create").returns(testId.toString())
+        const create = Create(clientRepositoryMock)
         
         await create(req, res)
 

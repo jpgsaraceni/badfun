@@ -1,5 +1,3 @@
-// TODO:
-
 export default (ClientRepository) => {
     return async function Execute(id, name, email) {
 

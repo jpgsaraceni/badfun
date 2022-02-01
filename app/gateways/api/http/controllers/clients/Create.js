@@ -16,7 +16,7 @@ export default (repository) => {
         await createUseCase(name, email) // await necessary to run test
             .then((id) => {
                 res.status(201).json({id:id})
-            }).catch(() => {
+            }).catch((e) => {
                 res.sendStatus(500)
             })
     }

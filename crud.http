@@ -12,7 +12,7 @@ GET http://localhost:3000 HTTP/1.1
 
 ### Update client (update path param to valid id
 ### after creating a new or fetching existent clients)
-PUT http://localhost:3000/61f31592500847082b212417 HTTP/1.1
+PUT http://localhost:3000/61f317df34a484085def3adc HTTP/1.1
 content-type: application/json
 
 {
@@ -22,4 +22,4 @@ content-type: application/json
 
 ### Delete client (update path param to valid id
 ### after creating a new or fetching existent clients)
-DELETE http://localhost:3000/61f31589500847082b212414 HTTP/1.1
+DELETE http://localhost:3000/61f317df34a484085def3adc HTTP/1.1

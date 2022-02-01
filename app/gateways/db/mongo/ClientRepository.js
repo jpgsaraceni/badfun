@@ -1,13 +1,24 @@
+import Repository from "../../../contracts/repository.js";
+import Client from "./clients/Model.js";
 import Create from "./clients/Create.js";
-import DeleteEntry from "./clients/DeleteEntry.js";
 import Fetch from "./clients/Fetch.js";
 import Update from "./clients/Update.js";
+import DeleteEntry from "./clients/DeleteEntry.js";
 
-export default () => {
-    return {
-        Create,
-        DeleteEntry,
-        Fetch,
-        Update,
+export default class ClientRepository extends Repository {
+    async Create(clientInstance) {
+        return await Create(clientInstance)
+    }
+
+    async DeleteEntry(id) {
+        return await DeleteEntry(id)
+    }
+
+    async Fetch(){
+        return await Fetch()
+    }
+
+    async Update(id, name, email){
+        return await Update(id, name, email)
     }
 }
