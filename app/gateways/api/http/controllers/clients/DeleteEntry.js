@@ -1,7 +1,7 @@
 import DeleteEntry from "../../../../../domain/usecases/clients/DeleteEntry.js"
 
 export default (repository) => {
-    const deleteEntry = (req, res) => {
+    const deleteEntry = async (req, res) => {
 
         // inject repository implementation in usecase
         const deleteUseCase = DeleteEntry(repository);
@@ -13,7 +13,7 @@ export default (repository) => {
             return
         }
 
-        deleteUseCase(id)
+        await deleteUseCase(id)
             .then((result) => {
                 if (result == null) {
                     res.sendStatus(404)
