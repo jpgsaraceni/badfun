@@ -4,13 +4,14 @@
   "description": "Simple CRUD NodeJS API using mongoose following Clean Arch",
   "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./app/**/*.test.js",
     "start": "node app/app.js",
     "dev": "nodemon app/app.js"
   },
   "keywords": [
     "clean-arch",
-    "mongoose"
+    "mongoose",
+    "ddd"
   ],
   "author": "jpgsaraceni",
   "license": "ISC",
@@ -19,8 +20,12 @@
     "mongoose": "^6.1.8"
   },
   "devDependencies": {
+    "c8": "^7.11.0",
+    "chai": "^4.3.6",
     "dotenv": "^14.3.2",
-    "nodemon": "^2.0.15"
+    "mocha": "^9.2.0",
+    "nodemon": "^2.0.15",
+    "sinon": "^13.0.0"
   },
   "type": "module"
 }

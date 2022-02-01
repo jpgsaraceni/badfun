@@ -1,7 +1,7 @@
 import Create from "../../../../../domain/usecases/clients/Create.js"
 
 export default (repository) => {
-    const create = (req, res) => {
+    const create = async (req, res) => {
 
         // inject repository implementation in usecase
         const createUseCase = Create(repository);
@@ -13,7 +13,7 @@ export default (repository) => {
             return
         }
 
-        createUseCase(name, email)
+        await createUseCase(name, email) // await necessary to run test
             .then((id) => {
                 res.status(201).json({id:id})
             }).catch(() => {
