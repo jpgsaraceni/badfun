@@ -39,4 +39,84 @@ describe('#controllers.Create.js', function(){
 
         expect(jsonSpy.firstCall.args[0].id).to.be.equal(testId.toString())
     })
+
+    it('should return 400 for request with invalid payload', async function() {
+        const req = {
+            body: {
+                "key": "unexpected value"
+            }
+        }
+        const sendStatusSpy = Sinon.spy()
+        const res = {
+            sendStatus: sendStatusSpy
+        }
+
+        const clientRepositoryMock = new ClientRepositoryMock
+        const create = Create(clientRepositoryMock)
+        await create(req, res)
+
+        expect(sendStatusSpy.calledOnce).to.be.true
+        expect(sendStatusSpy.firstCall.args[0]).to.be.equal(400)
+    })
+
+    it('should return 400 for request with empty name in payload', async function() {
+        const req = {
+            body: {
+                "name": "",
+                "email": "something@email.com"
+            }
+        }
+        const sendStatusSpy = Sinon.spy()
+        const res = {
+            sendStatus: sendStatusSpy
+        }
+
+        const clientRepositoryMock = new ClientRepositoryMock
+        const create = Create(clientRepositoryMock)
+        await create(req, res)
+
+        expect(sendStatusSpy.calledOnce).to.be.true
+        expect(sendStatusSpy.firstCall.args[0]).to.be.equal(400)
+    })
+
+    it('should return 400 for request with empty email in payload', async function() {
+        const req = {
+            body: {
+                "name": "some name",
+                "email": ""
+            }
+        }
+        const sendStatusSpy = Sinon.spy()
+        const res = {
+            sendStatus: sendStatusSpy
+        }
+
+        const clientRepositoryMock = new ClientRepositoryMock
+        const create = Create(clientRepositoryMock)
+        await create(req, res)
+
+        expect(sendStatusSpy.calledOnce).to.be.true
+        expect(sendStatusSpy.firstCall.args[0]).to.be.equal(400)
+    })
+
+    it('should return 500 due to repository error', async function() {
+        const req = {
+            body: {
+                "name": "some name",
+                "email": "something@email.com"
+            }
+        }
+        const sendStatusSpy = Sinon.spy()
+        const res = {
+            sendStatus: sendStatusSpy
+        }
+
+        const clientRepositoryMock = new ClientRepositoryMock
+        Sinon.stub(clientRepositoryMock, "Create").throwsException
+        const create = Create(clientRepositoryMock)
+        await create(req, res)
+
+        expect(sendStatusSpy.calledOnce).to.be.true
+        expect(sendStatusSpy.firstCall.args[0]).to.be.equal(500)
+    })
 })
