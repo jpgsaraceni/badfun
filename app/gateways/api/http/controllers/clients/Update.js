@@ -1,7 +1,7 @@
 import Update from "../../../../../domain/usecases/clients/Update.js"
 
 export default (repository) => {
-    const update = (req, res, next) => {
+    const update = async (req, res) => {
 
         // inject repository implementation in usecase
         const updateUseCase = Update(repository);
@@ -14,7 +14,7 @@ export default (repository) => {
             return
         }
 
-        updateUseCase(id, name, email)
+        await updateUseCase(id, name, email)
         .then((result) => {
             if (result == null) {
                 res.sendStatus(404)
