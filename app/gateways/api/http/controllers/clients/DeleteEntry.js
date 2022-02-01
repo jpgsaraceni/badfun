@@ -17,11 +17,10 @@ export default (repository) => {
             .then((result) => {
                 if (result == null) {
                     res.sendStatus(404)
-                } else {
-                    res.sendStatus(200)
+                    return
                 }
-            }).catch((err) => {
-                console.log(err)
+                res.sendStatus(200)
+            }).catch(() => {
                 res.sendStatus(500)
             })
     }
