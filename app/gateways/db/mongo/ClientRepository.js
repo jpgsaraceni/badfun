@@ -1,5 +1,4 @@
 import Repository from "../../../contracts/repository.js";
-import Client from "./clients/Model.js";
 import Create from "./clients/Create.js";
 import Fetch from "./clients/Fetch.js";
 import Update from "./clients/Update.js";
