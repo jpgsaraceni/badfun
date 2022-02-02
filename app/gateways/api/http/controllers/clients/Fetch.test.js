@@ -40,5 +40,22 @@ describe('#controllers.Fetch.js', function() {
         expect(jsonStub.firstCall.args[0]).to.be.equal(testClientList)
     })
 
-    
+    it('should respond status 500 due to repository error', async function() {
+        const req = {}
+
+        const sendStatusSpy = Sinon.spy()
+
+        const res = {
+            sendStatus: sendStatusSpy
+        }
+
+        const clientRepositoryMock = new ClientRepositoryMock
+        Sinon.stub(clientRepositoryMock, "Fetch").rejects()
+        const fetch = Fetch(clientRepositoryMock)
+        
+        await fetch(req, res)
+
+        expect(sendStatusSpy.calledOnce).to.be.true
+        expect(sendStatusSpy.firstCall.args[0]).to.be.equal(500)
+    })
 })
