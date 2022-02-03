@@ -8,6 +8,7 @@ Unit and integration tests written with Mocha, Chai and Sinon.
 
 ## TODO
 
+* Use temporary docker containers for integration tests
 * Create some business logic for the usecases;
 * Unit tests for usecases;
 * Improve error handling;
