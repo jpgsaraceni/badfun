@@ -9,10 +9,10 @@ export default class Setup {
 
     async testDbUp() {
         try {
-            await mongoose.connect(`mongodb://${env.dbUrl}/${env.dbName}`)
+            await mongoose.connect(`mongodb://${env.dbUrl}/${env.dbName}${this.testName}`)
             return console.log("connected to mongo test db")
-        } catch {
-            return console.log("connection to mongodb failed")
+        } catch (e) {
+            return console.log(`connection to mongodb failed: ${e}`)
         }
     }
 
