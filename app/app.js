@@ -1,4 +1,4 @@
-import Env from "./config/Env.js"
+import Env from "./config/env.js"
 import express from "express"
 
 import Router from "./gateways/api/http/Router.js"

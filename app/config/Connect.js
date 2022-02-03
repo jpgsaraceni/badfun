@@ -1,4 +1,4 @@
 import mongoose from 'mongoose'
-import Env from './Env.js';
+import env from './env.js';
 
-export default () => mongoose.connect(`mongodb://${Env.dbUrl}/${Env.db}`);
+export default () => mongoose.connect(`mongodb://${env.dbUrl}/${env.dbName}`);
