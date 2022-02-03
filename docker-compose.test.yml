@@ -1,0 +1,5 @@
+  mongo-test-container:
+    image: mongo
+    ports:
+      - 27017:27017
+    command: mongod --bind_ip_all
