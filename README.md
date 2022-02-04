@@ -1,6 +1,8 @@
-# Mongoose CRUD API
+# BaDFuN
 
-Simple CRUD API to register, fetch, update and delete clients from a MongoDB database.
+**Basic Development Fundamentals on Node** is a very simple API in which I intend to explore some web development core concepts and technology, running on NodeJS.
+
+The current implementation is a simple CRUD API to register, fetch, update and delete clients from a MongoDB database.
 
 Built with Node.JS, Mongoose and designed following Clean Arch.
 
@@ -8,7 +10,7 @@ Unit and integration tests written with Mocha, Chai and Sinon.
 
 ## TODO
 
-* Use temporary docker containers for integration tests
+* Check how multiple connections are working on temporary docker images (integration tests);
 * Create some business logic for the usecases;
 * Unit tests for usecases;
 * Improve error handling;
